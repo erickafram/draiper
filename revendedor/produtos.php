@@ -104,8 +104,9 @@ $iconesCategorias = [
             }
 
             echo '<div class="col-md-3">';
-            echo '<div class="card mb-4" style="max-width: 188px;">'; // Defina a largura máxima do card
-            echo '<div style="position: relative; max-width: 188px; max-height: 318px; overflow: hidden;">'; // Container para a imagem e texto com largura e altura máximas
+            echo '<div class="card mb-4" style="max-width: 188px;">';
+            echo '<a href="cart.php?add_to_cart=1&produto_id=' . $row['id'] . '">'; // Adicione o link para adicionar ao carrinho
+            echo '<div style="position: relative; max-width: 188px; max-height: 318px; overflow: hidden;">';
             echo '<img class="card-img-top" src="' . $caminhoImagens . $row['imagem_destaque'] . '" alt="' . $row['nome'] . '">';
             echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: rgb(57 222 123); color: white; font-size: 0.75rem;">Entrega Imediata</div>';
             echo '</div>';
@@ -114,12 +115,14 @@ $iconesCategorias = [
             echo '<p class="card-text" style="color: #ee4d2d; font-size: 0.85rem;">R$ ' . number_format($row['preco'], 2, ',', '.') . '</p>';
             echo '<p class="card-text" style="font-size:12px;">Estoque: ' . $row['estoque'] . ' unidades</p>';
             echo '</div>';
+            echo '</a>'; // Feche o link
             echo '</div>';
             echo '</div>';
 
             $count++;
         }
         ?>
+
     </div>
 </div>
 </body>
