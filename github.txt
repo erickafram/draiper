@@ -1,0 +1,8 @@
+Comando Atualizar o Código Existente do projeto do GITHUB
+cd /opt/bitnami/wordpress/draiper && sudo git pull origin master
+
+Apagar A pasta
+sudo rm -rf /opt/bitnami/wordpress/draiper
+
+Clonar Projeto
+cd /opt/bitnami/wordpress/ && sudo git clone https://github.com/erickafram/draiper.git
