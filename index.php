@@ -42,13 +42,18 @@
                 <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
                 <li><a class="nav-link scrollto" href="#about">Sobre nós</a></li>
                 <li><a class="nav-link scrollto" href="#features">Novidades</a></li>
-                <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#pricing">Preço</a></li> -->
                 <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
             </ul>
+            <a href="login.php">
+                <button type="button" class="btn btn-success" style="--bs-btn-bg: #2125b9; --bs-btn-border-color: #2125b9;">Entrar</button>
+            </a>
+            <a href="cadastro/tipo_cadastro.php" style="padding: 10px 0 10px 7px;">
+                <button type="button" class="btn btn-success" style="margin-right:10px;--bs-btn-bg: #2125b9; --bs-btn-border-color: #2125b9;">Cadastre-se</button>
+            </a>
+
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
+
 
     </div>
 </header><!-- End Header -->
@@ -63,7 +68,7 @@
                     <h1>A Revolução do <p><span>Fashion on demand</span></h1></p>
                     <h2 style="font-size:18px;">Descubra o Draiper, a plataforma que simplifica a vida de revendedores, fornecedores e transportadoras, conectando compradores e vendedores de roupas.</h2>
                     <div class="text-center text-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Começar Agora</a>
+                        <a href="cadastro/tipo_cadastro.php" class="btn-get-started scrollto">Começar Agora</a>
                     </div>
                 </div>
             </div>
