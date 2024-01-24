@@ -42,9 +42,9 @@
                 <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
                 <li><a class="nav-link scrollto" href="#about">Sobre nós</a></li>
                 <li><a class="nav-link scrollto" href="#features">Novidades</a></li>
-                <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li> -->
+                <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#pricing">Preço</a></li>
+                <li><a class="nav-link scrollto" href="#pricing">Preço</a></li> -->
                 <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,29 +102,30 @@
                 </div>
 
                 <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-                    <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                    <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+                    <h3>Conectando a Moda com Inovação e Eficiência</h3>
+                    <p>Descubra a facilidade e eficiência de gerenciar negócios de moda com a plataforma Draper Fashion on Demand. Nossa solução oferece recursos poderosos para revolucionar a maneira como você interage com o mercado da moda.</p>
 
                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
                         <h4 class="title"><a href="">Cadastro Integrado</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <p class="description">Facilitamos a conexão entre fornecedores, revendedores e transportadoras com um sistema de cadastro simples e seguro, impulsionando seus negócios no mundo da moda.</p>
                     </div>
 
                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                         <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <h4 class="title"><a href="">Variedade de Produtos</a></h4>
+                        <p class="description">Acesse um amplo catálogo de produtos da moda, desde roupas exclusivas até acessórios deslumbrantes, tudo em um único lugar.</p>
                     </div>
 
                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
                         <div class="icon"><i class="bx bx-atom"></i></div>
-                        <h4 class="title"><a href="">Dine Pad</a></h4>
-                        <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+                        <h4 class="title"><a href="">Logística Inteligente</a></h4>
+                        <p class="description">Experimente um sistema de logística avançado que garante a entrega eficiente e rastreamento preciso de todos os seus pedidos.</p>
                     </div>
 
                 </div>
             </div>
+
 
         </div>
     </section><!-- End About Section -->
@@ -359,7 +360,6 @@
                     </ul>
                 </div>
             </div> -->
-
         </div>
     </section><!-- End Details Section -->
 
@@ -445,13 +445,13 @@
 
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
         <div class="container">
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
-                    <!-- Testimonial from Erick Vinicius -->
+
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Erick Vinicius">
@@ -463,9 +463,9 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
 
-                    <!-- Additional Testimonial Items -->
+                  >
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -477,7 +477,7 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
@@ -490,7 +490,7 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
@@ -503,7 +503,7 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
@@ -516,18 +516,18 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
 
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
-    </section><!-- End Test -->
+    </section>
 
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -604,10 +604,11 @@
             </div>
 
         </div>
-    </section><!-- End Team Section -->
+    </section>
+    <!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- <section id="pricing" class="pricing">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -689,7 +690,8 @@
             </div>
 
         </div>
-    </section><!-- End Pricing Section -->
+    </section>
+    <!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq section-bg">
@@ -697,52 +699,62 @@
 
             <div class="section-title" data-aos="fade-up">
                 <h2>F.A.Q</h2>
-                <p>Frequently Asked Questions</p>
+                <p>Perguntas Frequentes</p>
             </div>
 
             <div class="faq-list">
                 <ul>
+                    <!-- Pergunta 1 -->
                     <li data-aos="fade-up">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <i class="bx bx-help-circle icon-help"></i>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Como funciona o processo de cadastro na plataforma? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                             <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                O cadastro é simples e pode ser feito em poucos minutos. Fornecedores, revendedores e transportadoras precisam apenas fornecer informações básicas para começar a utilizar nossos serviços.
                             </p>
                         </div>
                     </li>
 
+                    <!-- Pergunta 2 -->
                     <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <i class="bx bx-help-circle icon-help"></i>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Quais são as taxas ou custos associados? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Cobramos uma pequena comissão sobre as vendas realizadas através da plataforma. Não há taxas ocultas, e todas as tarifas são claramente explicadas durante o processo de cadastro.
                             </p>
                         </div>
                     </li>
 
+                    <!-- Pergunta 3 -->
                     <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <i class="bx bx-help-circle icon-help"></i>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Como garantimos a qualidade dos produtos e serviços? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                             <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                Temos um sistema de avaliação e feedback para garantir que fornecedores e transportadoras mantenham altos padrões de qualidade. Além disso, realizamos verificações periódicas e incentivamos os usuários a reportar qualquer problema.
                             </p>
                         </div>
                     </li>
 
+                    <!-- Pergunta 4 -->
                     <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <i class="bx bx-help-circle icon-help"></i>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Qual é o processo para fazer um pedido na plataforma? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                             <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                                Os revendedores podem navegar pelo catálogo, selecionar produtos e fazer pedidos diretamente na plataforma. Após a confirmação do pedido, os fornecedores são notificados e começam o processo de preparação e envio.
                             </p>
                         </div>
                     </li>
 
+                    <!-- Pergunta 5 -->
                     <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <i class="bx bx-help-circle icon-help"></i>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Como funciona o rastreamento e a entrega dos pedidos? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                             <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                                Uma vez que o pedido é coletado pela transportadora, um sistema de rastreamento é ativado, permitindo que os revendedores acompanhem o progresso da entrega em tempo real até a chegada ao destino final.
                             </p>
                         </div>
                     </li>
@@ -752,6 +764,7 @@
 
         </div>
     </section><!-- End F.A.Q Section -->
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
