@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Draiper - Index</title>
+    <title>Draiper - A Revolução do Fashion on demand</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
