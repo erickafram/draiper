@@ -50,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($erro)) {
         }
     }
     echo "<pre>";
-    print_r($_FILES);
-    echo "</pre>";
+    //print_r($_FILES);
+    //echo "</pre>";
 
 // Substitua as linhas anteriores por estas
     if (isset($_POST['tamanhos']) && is_array($_POST['tamanhos'])) {
