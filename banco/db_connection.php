@@ -2,8 +2,8 @@
 // Configurações do banco de dados
 $servername = "localhost"; // Nome do servidor do banco de dados (geralmente 'localhost' em ambiente de desenvolvimento)
 $username = "root"; // Nome de usuário do banco de dados
-$password = "RY1mR3W-8*Gm"; // Senha do banco de dados
-$database = "draper"; // Nome do banco de dados
+$password = ""; // Senha do banco de dados
+$database = "shoponddemand"; // Nome do banco de dados
 
 // Criar uma conexão com o banco de dados
 $mysqli = new mysqli($servername, $username, $password, $database);
