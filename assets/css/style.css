@@ -762,7 +762,7 @@ section {
   display: block;
   position: absolute;
   left: calc(50% - 47px);
-  top: calc(50% - 47px);
+  top: calc(30% - 47px);
   overflow: hidden;
 }
 
