@@ -105,7 +105,7 @@ $iconesCategorias = [
 
             echo '<div class="col-md-3">';
             echo '<div class="card mb-4" style="max-width: 188px;">';
-            echo '<a href="cart.php?add_to_cart=1&produto_id=' . $row['id'] . '">'; // Adicione o link para adicionar ao carrinho
+            echo '<a href="detalhes_produto.php?produto_id=' . $row['id'] . '">'; // Altere o link para redirecionar para detalhes_produto.php
             echo '<div style="position: relative; max-width: 188px; max-height: 318px; overflow: hidden;">';
             echo '<img class="card-img-top" src="' . $caminhoImagens . $row['imagem_destaque'] . '" alt="' . $row['nome'] . '">';
             echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: rgb(57 222 123); color: white; font-size: 0.75rem;">Entrega Imediata</div>';
