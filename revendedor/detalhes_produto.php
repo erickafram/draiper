@@ -33,8 +33,15 @@ if (isset($_GET['produto_id'])) {
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         </head>
         <body>
-        <div class="container">
-            <h1>Detalhes do Produto</h1>
+        <div class="container" style="padding-top:20px;">
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="dashboard.php">Página Inicial</a></li>
+                    <li class="breadcrumb-item"><a href="produtos.php">Produtos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><?php echo $produto['nome']; ?></li>
+                </ol>
+            </nav>
             <div class="row">
                 <div class="col-md-6">
                     <!-- Imagem em destaque -->
