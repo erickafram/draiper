@@ -31,25 +31,16 @@ if (isset($_GET['produto_id'])) {
             <meta charset="UTF-8">
             <title>Detalhes do Produto</title>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    // Quando uma imagem adicional for clicada, substitua a imagem em destaque
-                    $('.additional-image').on('click', function () {
-                        var imageUrl = $(this).attr('src');
-                        $('#main-product-image').attr('src', imageUrl);
-                    });
-                });
-            </script>
         </head>
         <body>
         <div class="container">
             <h1>Detalhes do Produto</h1>
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Exiba a imagem em destaque com um tamanho máximo de 450x450 pixels -->
+                    <!-- Exiba a imagem em destaque com um tamanho máximo de 100% de largura e altura automática -->
                     <img id="main-product-image" src="<?php echo $caminhoImagens . $produto['imagem_destaque']; ?>"
                          alt="<?php echo $produto['nome']; ?>"
-                         style="max-width: 450px; max-height: 450px; width: auto; height: auto;">
+                         style="max-width: 100%; height: auto;">
                 </div>
                 <div class="col-md-6">
                     <h2><?php echo $produto['nome']; ?></h2>
@@ -75,27 +66,30 @@ if (isset($_GET['produto_id'])) {
                             <?php } ?>
                         </select>
 
+                        <!-- Quantidade mínima de compra -->
+                        <input type="hidden" name="quantidade_minima" value="<?php echo $produto['quantidade_minima_pedido']; ?>">
+
                         <label for="quantidade">Quantidade:</label>
                         <input type="number" name="quantidade" id="quantidade" value="1" min="<?php echo $produto['quantidade_minima_pedido'] ?: 1; ?>"
                                max="<?php echo $produto['estoque']; ?>">
                         <?php if ($produto['quantidade_minima_pedido'] > 1) { ?>
                             <p>Quantidade mínima de compra: <?php echo $produto['quantidade_minima_pedido']; ?></p>
                         <?php } ?>
-                        <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                        <button type="button" class="btn btn-primary" id="addToCart">Adicionar ao Carrinho</button>
+                        <button type="button" class="btn btn-success" id="finalizePurchase">Finalizar Compra</button>
                     </form>
-
                 </div>
             </div>
 
             <!-- Exiba as imagens adicionais vinculadas ao produto -->
             <div class="row">
-                <?php foreach ($imagens as $imagem) { ?>
-                    <div class="col-md-3">
+                <div class="col-md-12">
+                    <?php foreach ($imagens as $imagem) { ?>
                         <img src="<?php echo $caminhoImagens . $imagem; ?>" alt="<?php echo $produto['nome']; ?>"
-                             style="max-width: 150px; max-height: 150px; width: auto; height: auto;"
-                             class="additional-image">
-                    </div>
-                <?php } ?>
+                             style="max-width: 100px; max-height: 100px; width: auto; height: auto; margin: 5px;"
+                             class="additional-image" onclick="trocarImagem('<?php echo $caminhoImagens . $imagem; ?>')">
+                    <?php } ?>
+                </div>
             </div>
             <!-- Exiba a descrição do produto -->
             <div class="row">
@@ -105,6 +99,55 @@ if (isset($_GET['produto_id'])) {
                 </div>
             </div>
         </div>
+
+        <script>
+            $(document).ready(function () {
+                // Quando o botão "Adicionar ao Carrinho" for clicado
+                $('#addToCart').on('click', function () {
+                    var quantidade = $('#quantidade').val();
+                    var produtoId = <?php echo $produto['id']; ?>;
+                    var tamanho = $('#tamanho').val();
+                    var cor = $('#cor').val();
+                    var quantidadeMinima = <?php echo $produto['quantidade_minima_pedido']; ?>;
+
+                    // Verifica se a quantidade selecionada é maior ou igual à quantidade mínima
+                    if (quantidade < quantidadeMinima) {
+                        alert('A quantidade mínima de compra é ' + quantidadeMinima + '.');
+                        return; // Impede o envio da solicitação AJAX
+                    }
+
+                    // Enviar uma solicitação AJAX para adicionar o produto ao carrinho
+                    $.ajax({
+                        url: 'adicionar_ao_carrinho.php',
+                        type: 'POST',
+                        data: {
+                            produto_id: produtoId,
+                            quantidade: quantidade,
+                            tamanho: tamanho,
+                            cor: cor
+                        },
+                        success: function (response) {
+                            // Exiba uma mensagem de sucesso ou atualize o carrinho na interface do usuário
+                            alert('Produto adicionado ao carrinho com sucesso!');
+                        },
+                        error: function () {
+                            // Lidar com erros, se houver algum
+                            alert('Erro ao adicionar o produto ao carrinho.');
+                        }
+                    });
+                });
+
+                // Quando o botão "Finalizar Compra" for clicado
+                $('#finalizePurchase').on('click', function () {
+                    window.location.href = 'cart.php'; // Redirecione para a página de carrinho
+                });
+            });
+
+            // Função para trocar a imagem em destaque
+            function trocarImagem(imagem) {
+                $('#main-product-image').attr('src', imagem);
+            }
+        </script>
         </body>
         </html>
         <?php
