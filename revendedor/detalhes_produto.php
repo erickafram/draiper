@@ -37,10 +37,19 @@ if (isset($_GET['produto_id'])) {
             <h1>Detalhes do Produto</h1>
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Exiba a imagem em destaque com um tamanho máximo de 100% de largura e altura automática -->
+                    <!-- Imagem em destaque -->
                     <img id="main-product-image" src="<?php echo $caminhoImagens . $produto['imagem_destaque']; ?>"
                          alt="<?php echo $produto['nome']; ?>"
                          style="max-width: 100%; height: auto;">
+
+                    <!-- Imagens adicionais -->
+                    <div class="additional-images">
+                        <?php foreach ($imagens as $imagem) { ?>
+                            <img src="<?php echo $caminhoImagens . $imagem; ?>" alt="<?php echo $produto['nome']; ?>"
+                                 style="max-width: 100px; max-height: 100px; width: auto; height: auto; margin: 5px;"
+                                 class="additional-image" onclick="trocarImagem('<?php echo $caminhoImagens . $imagem; ?>')">
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <h2><?php echo $produto['nome']; ?></h2>
@@ -51,56 +60,53 @@ if (isset($_GET['produto_id'])) {
                         <input type="hidden" name="produto_id" value="<?php echo $produto['id']; ?>">
 
                         <!-- Opções de tamanho -->
-                        <label for="tamanho">Escolha o tamanho:</label>
-                        <select name="tamanho" id="tamanho">
-                            <?php foreach ($tamanhosDisponiveis as $tamanho) { ?>
-                                <option value="<?php echo $tamanho; ?>"><?php echo $tamanho; ?></option>
-                            <?php } ?>
-                        </select>
+                        <div class="form-group">
+                            <label for="tamanho">Escolha o tamanho:</label>
+                            <select name="tamanho" id="tamanho" class="form-control">
+                                <?php foreach ($tamanhosDisponiveis as $tamanho) { ?>
+                                    <option value="<?php echo $tamanho; ?>"><?php echo $tamanho; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
                         <!-- Opções de cor -->
-                        <label for="cor">Escolha a cor:</label>
-                        <select name="cor" id="cor">
-                            <?php foreach ($coresDisponiveis as $cor) { ?>
-                                <option value="<?php echo $cor; ?>"><?php echo $cor; ?></option>
-                            <?php } ?>
-                        </select>
+                        <div class="form-group">
+                            <label for="cor">Escolha a cor:</label>
+                            <select name="cor" id="cor" class="form-control">
+                                <?php foreach ($coresDisponiveis as $cor) { ?>
+                                    <option value="<?php echo $cor; ?>"><?php echo $cor; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
                         <!-- Quantidade mínima de compra -->
-                        <input type="hidden" name="quantidade_minima" value="<?php echo $produto['quantidade_minima_pedido']; ?>">
+                        <div class="form-group">
+                            <label for="quantidade">Quantidade:</label>
+                            <input type="number" name="quantidade" id="quantidade" value="1" min="<?php echo $produto['quantidade_minima_pedido'] ?: 1; ?>"
+                                   max="<?php echo $produto['estoque']; ?>" class="form-control">
+                            <?php if ($produto['quantidade_minima_pedido'] > 1) { ?>
+                                <p class="quantidade-minima">Quantidade mínima de compra: <?php echo $produto['quantidade_minima_pedido']; ?></p>
+                            <?php } ?>
+                        </div>
 
-                        <label for="quantidade">Quantidade:</label>
-                        <input type="number" name="quantidade" id="quantidade" value="1" min="<?php echo $produto['quantidade_minima_pedido'] ?: 1; ?>"
-                               max="<?php echo $produto['estoque']; ?>">
-                        <?php if ($produto['quantidade_minima_pedido'] > 1) { ?>
-                            <p>Quantidade mínima de compra: <?php echo $produto['quantidade_minima_pedido']; ?></p>
-                        <?php } ?>
                         <button type="button" class="btn btn-primary" id="addToCart">Adicionar ao Carrinho</button>
                         <button type="button" class="btn btn-success" id="finalizePurchase">Finalizar Compra</button>
                     </form>
                 </div>
             </div>
 
-            <!-- Exiba as imagens adicionais vinculadas ao produto -->
-            <div class="row">
-                <div class="col-md-12">
-                    <?php foreach ($imagens as $imagem) { ?>
-                        <img src="<?php echo $caminhoImagens . $imagem; ?>" alt="<?php echo $produto['nome']; ?>"
-                             style="max-width: 100px; max-height: 100px; width: auto; height: auto; margin: 5px;"
-                             class="additional-image" onclick="trocarImagem('<?php echo $caminhoImagens . $imagem; ?>')">
-                    <?php } ?>
+            <!-- Exiba a descrição do produto dentro de um container organizado -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="margin-top:40px;margin-top:20px;">
+                        <h4>Descrição do Produto</h4>
+                        <p><?php echo $produto['descricao']; ?></p>
+                    </div>
                 </div>
             </div>
-            <!-- Exiba a descrição do produto -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Descrição do Produto</h2>
-                    <p><?php echo $produto['descricao']; ?></p>
-                </div>
-            </div>
-        </div>
 
-        <script>
+
+            <script>
             $(document).ready(function () {
                 // Quando o botão "Adicionar ao Carrinho" for clicado
                 $('#addToCart').on('click', function () {

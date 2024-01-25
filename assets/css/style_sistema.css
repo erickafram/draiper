@@ -10373,3 +10373,16 @@ footer a:hover {
 .hide {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .additional-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .additional-image {
+    flex-basis: calc(50% - 10px);
+    margin: 5px;
+  }
+}
