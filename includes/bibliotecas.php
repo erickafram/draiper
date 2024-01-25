@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Link para o seu arquivo de estilo personalizado -->
-    <link rel="stylesheet" href="/draper/assets/css/style_sistema.css">
+    <link rel="stylesheet" href="/draiper/assets/css/style_sistema.css">
 </head>
 <body>
 

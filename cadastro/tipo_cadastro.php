@@ -6,7 +6,7 @@ include('../includes/bibliotecas.php');
 
 <div class="container mt-5" style="max-width: 800px;">
     <h1 class="text-center" style="font-size: 25px;">É um prazer te ver por aqui!</h1>
-    <p class="text-center" style="font-size: 20px;">Quem é você na Draper?</p>
+    <p class="text-center" style="font-size: 20px;">Quem é você na Draiper?</p>
 
     <form action="cadastro.php" method="POST">
         <div class="row">

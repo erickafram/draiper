@@ -243,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <a class="btn btn-secondary" href="tipo_cadastro.php">Voltar</a>
-        <button type="submit" class="btn btn-primary" id="botao_cadastrar" style="display: none;">Faça parte da Draper!</button>
+        <button type="submit" class="btn btn-primary" id="botao_cadastrar" style="display: none;">Faça parte da Draiper!</button>
     </form>
 </div>
 </div>
