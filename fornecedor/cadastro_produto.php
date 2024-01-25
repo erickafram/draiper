@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($erro)) {
             $erro = "Houve um erro ao fazer o upload da imagem em destaque.";
         }
     }
-    echo "<pre>";
+    //echo "<pre>";
     //print_r($_FILES);
     //echo "</pre>";
 
@@ -320,187 +320,187 @@ if ($resultadoCategorias) {
                     </div>
                 </div>
             </div>
-                <!-- Botão de Submissão -->
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;">Cadastrar Produto</button>
+            <!-- Botão de Submissão -->
+            <button type="submit" class="btn btn-primary" style="margin-top:20px;">Cadastrar Produto</button>
     </form>
-<script>
+    <script>
 
-    document.getElementById('seletor_cores').addEventListener('change', function() {
-        var coresSelecionadasInput = document.getElementById('cores_selecionadas');
-        var corSelecionada = this.value;
+        document.getElementById('seletor_cores').addEventListener('change', function() {
+            var coresSelecionadasInput = document.getElementById('cores_selecionadas');
+            var corSelecionada = this.value;
 
-        if (corSelecionada) {
-            // Adiciona a cor selecionada ao campo, separadas por vírgula
-            if (coresSelecionadasInput.value) {
-                coresSelecionadasInput.value += ', ' + corSelecionada;
+            if (corSelecionada) {
+                // Adiciona a cor selecionada ao campo, separadas por vírgula
+                if (coresSelecionadasInput.value) {
+                    coresSelecionadasInput.value += ', ' + corSelecionada;
+                } else {
+                    coresSelecionadasInput.value = corSelecionada;
+                }
+            }
+
+            // Limpa o seletor para permitir outra seleção
+            this.value = '';
+        });
+
+        document.getElementById('limpar_selecao').addEventListener('click', function() {
+            // Limpa o campo de cores selecionadas
+            document.getElementById('cores_selecionadas').value = '';
+        });
+
+        document.getElementById('preco').addEventListener('input', function (e) {
+            var value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^0+/, ''); // Remove zeros à esquerda
+            if (value.length <= 5) {
+                value = value.padStart(3, '0'); // Garante pelo menos 3 dígitos
+                value = value.replace(/(\d{2})$/, ',$1'); // Insere vírgula antes dos últimos 2 dígitos
+                if (value.length > 4) {
+                    value = value.replace(/^(\d{1,2})(\d{3,})/, '$1.$2'); // Insere ponto nos milhares
+                }
+                e.target.value = 'R$ ' + value;
             } else {
-                coresSelecionadasInput.value = corSelecionada;
-            }
-        }
-
-        // Limpa o seletor para permitir outra seleção
-        this.value = '';
-    });
-
-    document.getElementById('limpar_selecao').addEventListener('click', function() {
-        // Limpa o campo de cores selecionadas
-        document.getElementById('cores_selecionadas').value = '';
-    });
-
-    document.getElementById('preco').addEventListener('input', function (e) {
-        var value = e.target.value.replace(/\D/g, '');
-        value = value.replace(/^0+/, ''); // Remove zeros à esquerda
-        if (value.length <= 5) {
-            value = value.padStart(3, '0'); // Garante pelo menos 3 dígitos
-            value = value.replace(/(\d{2})$/, ',$1'); // Insere vírgula antes dos últimos 2 dígitos
-            if (value.length > 4) {
-                value = value.replace(/^(\d{1,2})(\d{3,})/, '$1.$2'); // Insere ponto nos milhares
-            }
-            e.target.value = 'R$ ' + value;
-        } else {
-            e.target.value = e.target.value.substring(0, e.target.value.length - 1); // Evita ultrapassar o limite
-        }
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const inputDestaque = document.getElementById('imagem_destaque');
-        const previewDestaqueContainer = document.getElementById('preview-destaque-container');
-
-        inputDestaque.addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    previewDestaqueContainer.innerHTML = ''; // Limpa o contêiner antes de adicionar nova imagem
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.style.width = '70px'; // Define o tamanho da pré-visualização
-                    img.style.height = '70px';
-                    previewDestaqueContainer.appendChild(img);
-                };
-                reader.readAsDataURL(file);
+                e.target.value = e.target.value.substring(0, e.target.value.length - 1); // Evita ultrapassar o limite
             }
         });
-    });
+    </script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const imageUploadBox = document.querySelector('.image-upload-box');
-        const imageUploadInput = document.querySelector('.image-upload');
-        const addImageButton = document.querySelector('.add-image-button');
-        const previewContainer = document.getElementById('preview-container');
-        const imageCount = document.getElementById('image-count');
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputDestaque = document.getElementById('imagem_destaque');
+            const previewDestaqueContainer = document.getElementById('preview-destaque-container');
 
-        let uploadedImages = 0;
-
-        addImageButton.addEventListener('click', function () {
-            imageUploadInput.click();
+            inputDestaque.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        previewDestaqueContainer.innerHTML = ''; // Limpa o contêiner antes de adicionar nova imagem
+                        const img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.style.width = '70px'; // Define o tamanho da pré-visualização
+                        img.style.height = '70px';
+                        previewDestaqueContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
         });
 
-        imageUploadInput.addEventListener('change', handleImageUpload);
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageUploadBox = document.querySelector('.image-upload-box');
+            const imageUploadInput = document.querySelector('.image-upload');
+            const addImageButton = document.querySelector('.add-image-button');
+            const previewContainer = document.getElementById('preview-container');
+            const imageCount = document.getElementById('image-count');
 
-        function handleImageUpload(event) {
-            const files = event.target.files;
-            for (let i = 0; i < files.length; i++) {
-                if (uploadedImages >= 6) break;
+            let uploadedImages = 0;
 
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const imgContainer = document.createElement('div');
-                    imgContainer.className = 'img-container';
-                    imgContainer.style.position = 'relative';
-                    imgContainer.style.display = 'inline-block';
-                    imgContainer.style.marginRight = '10px';
+            addImageButton.addEventListener('click', function () {
+                imageUploadInput.click();
+            });
 
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.style.width = '70px';
-                    img.style.height = '70px';
-                    img.classList.add('uploaded-image');
+            imageUploadInput.addEventListener('change', handleImageUpload);
 
-                    const deleteIcon = document.createElement('span');
-                    deleteIcon.innerHTML = '&#10006;';
-                    deleteIcon.style.position = 'absolute';
-                    deleteIcon.style.top = '5px';
-                    deleteIcon.style.right = '5px';
-                    deleteIcon.style.cursor = 'pointer';
-                    deleteIcon.style.color = 'red';
-                    deleteIcon.onclick = function () {
-                        imgContainer.remove();
-                        uploadedImages--;
+            function handleImageUpload(event) {
+                const files = event.target.files;
+                for (let i = 0; i < files.length; i++) {
+                    if (uploadedImages >= 6) break;
+
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'img-container';
+                        imgContainer.style.position = 'relative';
+                        imgContainer.style.display = 'inline-block';
+                        imgContainer.style.marginRight = '10px';
+
+                        const img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.style.width = '70px';
+                        img.style.height = '70px';
+                        img.classList.add('uploaded-image');
+
+                        const deleteIcon = document.createElement('span');
+                        deleteIcon.innerHTML = '&#10006;';
+                        deleteIcon.style.position = 'absolute';
+                        deleteIcon.style.top = '5px';
+                        deleteIcon.style.right = '5px';
+                        deleteIcon.style.cursor = 'pointer';
+                        deleteIcon.style.color = 'red';
+                        deleteIcon.onclick = function () {
+                            imgContainer.remove();
+                            uploadedImages--;
+                            updateImageCount();
+                        };
+
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(deleteIcon);
+                        previewContainer.appendChild(imgContainer);
+                        uploadedImages++;
                         updateImageCount();
                     };
-
-                    imgContainer.appendChild(img);
-                    imgContainer.appendChild(deleteIcon);
-                    previewContainer.appendChild(imgContainer);
-                    uploadedImages++;
-                    updateImageCount();
-                };
-                reader.readAsDataURL(files[i]);
+                    reader.readAsDataURL(files[i]);
+                }
             }
-        }
 
-        // Função para atualizar o contador de imagens
-        function updateImageCount() {
-            imageCount.innerHTML = `(${uploadedImages}/6) imagens selecionadas`;
-        }
-    });
-
-
-</script>
-
-<script>
-    function alterarOpcoesDeTamanho() {
-        var categoriaSelecionada = document.getElementById("categoria").value;
-        var containerTamanho = document.getElementById("tamanho");
-
-        // Limpa as opções existentes
-        containerTamanho.innerHTML = '';
-
-        // Define os tamanhos para cada categoria
-        var tamanhosPorCategoria = {
-            "34": ["P", "M", "G", "GG"],  // Blusas
-            "35": ["36", "38", "40", "42", "44"],  // Calças
-            "36": ["P", "M", "G", "GG"],  // Camisetas
-            "37": ["P", "M", "G", "GG", "XG"],  // Vestidos
-            "38": ["PP", "P", "M", "G"],  // Saias
-            "39": ["P", "M", "G", "GG"],  // Jaquetas
-            "40": ["P", "M", "G", "GG"],  // Shorts
-            "41": ["38", "40", "42", "44"],  // Bermudas
-            "42": ["P", "M", "G"],  // Lingerie
-            "43": ["P", "M", "G", "GG"],  // Pijamas
-            "44": ["P", "M", "G", "GG"],  // Macacão
-            "45": ["P", "M", "G", "GG"],  // Blazer
-            "46": ["P", "M", "G"],  // Crop Top
-            "47": ["P", "M", "G"],  // Body
-            "48": ["Único"],  // Cinto
-            "49": ["36", "38", "40", "42"],  // Calçados
-            "50": ["Único"],  // Acessórios
-            "51": ["Único"],  // Meias
-            "52": ["P", "M", "G", "GG"]  // Moletons
-        };
-
-        var tamanhos = tamanhosPorCategoria[categoriaSelecionada] || [];
-
-        // Adiciona as caixas de seleção de tamanho
-        tamanhos.forEach(function(tamanho) {
-            var label = document.createElement("label");
-            label.innerHTML = tamanho;
-
-            var checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.name = "tamanhos[]";
-            checkbox.value = tamanho;
-
-            label.prepend(checkbox);
-            containerTamanho.appendChild(label);
+            // Função para atualizar o contador de imagens
+            function updateImageCount() {
+                imageCount.innerHTML = `(${uploadedImages}/6) imagens selecionadas`;
+            }
         });
-    }
-</script>
-<a id="scroll-to-top" href="#header-section" class="scroll-to-top">
-    <i class="mdi mdi-chevron-up"></i>
-</a>
+
+
+    </script>
+
+    <script>
+        function alterarOpcoesDeTamanho() {
+            var categoriaSelecionada = document.getElementById("categoria").value;
+            var containerTamanho = document.getElementById("tamanho");
+
+            // Limpa as opções existentes
+            containerTamanho.innerHTML = '';
+
+            // Define os tamanhos para cada categoria
+            var tamanhosPorCategoria = {
+                "34": ["P", "M", "G", "GG"],  // Blusas
+                "35": ["36", "38", "40", "42", "44"],  // Calças
+                "36": ["P", "M", "G", "GG"],  // Camisetas
+                "37": ["P", "M", "G", "GG", "XG"],  // Vestidos
+                "38": ["PP", "P", "M", "G"],  // Saias
+                "39": ["P", "M", "G", "GG"],  // Jaquetas
+                "40": ["P", "M", "G", "GG"],  // Shorts
+                "41": ["38", "40", "42", "44"],  // Bermudas
+                "42": ["P", "M", "G"],  // Lingerie
+                "43": ["P", "M", "G", "GG"],  // Pijamas
+                "44": ["P", "M", "G", "GG"],  // Macacão
+                "45": ["P", "M", "G", "GG"],  // Blazer
+                "46": ["P", "M", "G"],  // Crop Top
+                "47": ["P", "M", "G"],  // Body
+                "48": ["Único"],  // Cinto
+                "49": ["36", "38", "40", "42"],  // Calçados
+                "50": ["Único"],  // Acessórios
+                "51": ["Único"],  // Meias
+                "52": ["P", "M", "G", "GG"]  // Moletons
+            };
+
+            var tamanhos = tamanhosPorCategoria[categoriaSelecionada] || [];
+
+            // Adiciona as caixas de seleção de tamanho
+            tamanhos.forEach(function(tamanho) {
+                var label = document.createElement("label");
+                label.innerHTML = tamanho;
+
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.name = "tamanhos[]";
+                checkbox.value = tamanho;
+
+                label.prepend(checkbox);
+                containerTamanho.appendChild(label);
+            });
+        }
+    </script>
+    <a id="scroll-to-top" href="#header-section" class="scroll-to-top">
+        <i class="mdi mdi-chevron-up"></i>
+    </a>
 </body>
 </html>
