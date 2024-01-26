@@ -6,7 +6,7 @@ include('../banco/db_connection.php');
 // Verifique se os parâmetros necessários foram recebidos via POST
 if (isset($_POST['produto_id']) && isset($_POST['quantidade']) && isset($_POST['tamanho']) && isset($_POST['cor'])) {
     $produto_id = $_POST['produto_id'];
-    $quantidade = $_POST['quantidade'];
+    $quantidadeAdicionada = $_POST['quantidade'];
     $tamanho = $_POST['tamanho'];
     $cor = $_POST['cor'];
 
@@ -17,42 +17,42 @@ if (isset($_POST['produto_id']) && isset($_POST['quantidade']) && isset($_POST['
     if ($resultProduto && mysqli_num_rows($resultProduto) > 0) {
         $produto = mysqli_fetch_assoc($resultProduto);
 
-        // Verifique se a quantidade solicitada está disponível em estoque
-        if ($quantidade > 0 && $quantidade <= $produto['estoque']) {
-            // Crie um array para representar o produto a ser adicionado ao carrinho
-            $produto_a_adicionar = array(
+        // Inicialize a sessão do carrinho, se ainda não foi feito
+        if (!isset($_SESSION['carrinho'])) {
+            $_SESSION['carrinho'] = array();
+        }
+
+        // Verifique se o produto já está no carrinho
+        $produtoEncontradoNoCarrinho = false;
+        foreach ($_SESSION['carrinho'] as $key => $item) {
+            if ($item['produto_id'] == $produto_id && $item['tamanho'] == $tamanho && $item['cor'] == $cor) {
+                // Produto já está no carrinho, atualize a quantidade
+                $_SESSION['carrinho'][$key]['quantidade'] += $quantidadeAdicionada;
+                $produtoEncontradoNoCarrinho = true;
+                break;
+            }
+        }
+
+        if (!$produtoEncontradoNoCarrinho) {
+            // Produto não está no carrinho, adicione como novo item
+            $_SESSION['carrinho'][] = array(
                 'produto_id' => $produto_id,
                 'nome' => $produto['nome'],
                 'preco' => $produto['preco'],
-                'quantidade' => $quantidade,
+                'quantidade' => $quantidadeAdicionada,
                 'tamanho' => $tamanho,
                 'cor' => $cor
             );
-
-            // Verifique se a variável de sessão 'carrinho' existe, se não, inicialize-a como um array vazio
-            if (!isset($_SESSION['carrinho'])) {
-                $_SESSION['carrinho'] = array();
-            }
-
-            // Adicione o produto ao carrinho
-            $_SESSION['carrinho'][] = $produto_a_adicionar;
-
-            // Retorne uma resposta de sucesso como JSON
-            echo json_encode(array('status' => 'success', 'message' => 'Produto adicionado ao carrinho com sucesso!'));
-            exit();
-        } else {
-            // A quantidade solicitada não está disponível em estoque
-            echo json_encode(array('status' => 'error', 'message' => 'Quantidade indisponível em estoque.'));
-            exit();
         }
+
+        // Retorne uma resposta de sucesso
+        echo json_encode(array('status' => 'success', 'message' => 'Produto adicionado/atualizado no carrinho com sucesso!'));
     } else {
         // Produto não encontrado
         echo json_encode(array('status' => 'error', 'message' => 'Produto não encontrado.'));
-        exit();
     }
 } else {
     // Parâmetros ausentes
     echo json_encode(array('status' => 'error', 'message' => 'Parâmetros ausentes.'));
-    exit();
 }
 ?>

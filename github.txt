@@ -1,3 +1,19 @@
+
+Copy code
+git --version
+Isso mostrará a versão do Git, confirmando que a instalação foi bem-sucedida.
+Clonar o Repositório Novamente
+Depois de instalar o Git, tente clonar o repositório novamente:
+
+bash
+Copy code
+sudo git clone https://github.com/erickafram/pgmonitor.git
+Notas Adicionais
+Uso do sudo: Dependendo das permissões necessárias na pasta onde você está tentando clonar o repositório, pode ser necessário usar sudo. No entanto, usar sudo para operações do Git geralmente não é recomendado, a menos que seja estritamente necessário, pois isso pode criar arquivos com permissões de superusuário, que podem ser problemáticos para gerenciar mais tarde.
+Instalação em Outros Sistemas: Se você estiver usando uma distribuição de Linux que não seja Debian/Ubuntu (por exemplo, CentOS, Fedora, etc.), o processo de instalação do Git será um pouco diferente. Nesses casos, você usaria o gerenciador de pacotes específico do sistema, como yum ou dnf.
+Após instalar o Git, você poderá clonar e gerenciar repositórios Git na sua instância do Google Cloud.
+
+
 Comando Atualizar o Código Existente do projeto do GITHUB
 cd /opt/bitnami/wordpress/draiper && sudo git pull origin master
 
