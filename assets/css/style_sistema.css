@@ -10324,7 +10324,7 @@ footer a:hover {
 }
 /* Altere a cor da borda no hover */
 .card:hover {
-  border-color: rgb(57 222 123); /* Altere a cor da borda para verde no hover */
+  border-color: #d0011b; /* Altere a cor da borda para verde no hover */
 }
 
 /* Estilize a seção de categorias */

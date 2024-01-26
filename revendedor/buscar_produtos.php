@@ -20,19 +20,21 @@ if (isset($_GET['termo'])) {
 
         // Loop para exibir os resultados
         while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="col-md-3">';
-            echo '<div class="card mb-4" style="max-width: 188px;">'; // Defina a largura máxima do card
-            echo '<div style="position: relative; max-width: 188px; max-height: 318px; overflow: hidden;">'; // Container para a imagem e texto com largura e altura máximas
+            echo '<div class="col-md-3 col-sm-6 mb-4">';
+            echo '<div class="card" style="width: 100%;">'; // Ajuste na largura do card
+            echo '<a href="detalhes_produto.php?produto_id=' . $row['id'] . '">'; // Altere o link para redirecionar para detalhes_produto.php
+            echo '<div style="position: relative; overflow: hidden;">';
             echo '<img class="card-img-top" src="' . $caminhoImagens . $row['imagem_destaque'] . '" alt="' . $row['nome'] . '">';
-            echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: rgb(57 222 123); color: white; font-size: 0.75rem;">Entrega Imediata</div>';
-            echo '</div>'; // Fechar o container da imagem e do texto
+            echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: #d0011b; color: white; font-size: 0.75rem;">Entrega Imediata</div>';
+            echo '</div>';
             echo '<div class="card-body">';
             echo '<h5 class="card-title" style="line-height: 14px; font-size: .75rem !important;">' . $row['nome'] . '</h5>';
-            echo '<p class="card-text" style="color: #ee4d2d; font-size: 0.85rem;">R$ ' . number_format($row['preco'], 2, ',', '.') . '</p>';
+            echo '<p class="card-text" style="color: #d0011b; font-size: 0.85rem;">R$ ' . number_format($row['preco'], 2, ',', '.') . '</p>';
             echo '<p class="card-text" style="font-size:12px;">Estoque: ' . $row['estoque'] . ' unidades</p>';
             echo '</div>';
-            echo '</div>';
-            echo '</div>';
+            echo '</a>'; // Feche o link
+            echo '</div>'; // Feche o div do card
+            echo '</div>'; // Feche o div da coluna
         }
 
         echo '</div>'; // Fechar a linha Bootstrap
