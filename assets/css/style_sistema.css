@@ -4689,8 +4689,8 @@ a.badge-primary:focus, a.badge-primary.focus {
 }
 
 .badge-secondary {
-  color: #212529;
-  background-color: #bbbbf2;
+  color: #ffffff;
+  background-color: #39de7b;
 }
 
 a.badge-secondary:hover, a.badge-secondary:focus {
@@ -10319,12 +10319,12 @@ footer a:hover {
 }
 /* Defina uma borda transparente no estado normal */
 .card {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: border-color 0.2s; /* Adicione uma transição suave para a mudança de cor da borda */
 }
 /* Altere a cor da borda no hover */
 .card:hover {
-  border-color: #d0011b; /* Altere a cor da borda para verde no hover */
+  border-color: #b0b0b0; /* Altere a cor da borda para verde no hover */
 }
 
 /* Estilize a seção de categorias */

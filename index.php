@@ -114,7 +114,7 @@
 
                 <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
                     <h3>Conectando a Moda com Inovação e Eficiência</h3>
-                    <p>Descubra a facilidade e eficiência de gerenciar negócios de moda com a plataforma Draper Fashion on Demand. Nossa solução oferece recursos poderosos para revolucionar a maneira como você interage com o mercado da moda.</p>
+                    <p>Descubra a facilidade e eficiência de gerenciar negócios de moda com a plataforma Draiper. Nossa solução oferece recursos poderosos para revolucionar a maneira como você interage com o mercado da moda.</p>
 
                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
@@ -470,7 +470,7 @@
                             <h4>Ceo &amp; Founder</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Construir o 'Draper Fashion on Demand' foi uma jornada apaixonante. Nosso objetivo sempre foi simplificar e inovar no setor da moda, conectando fornecedores, revendedores e transportadoras de maneira eficiente. Estou orgulhoso do que alcançamos e animado para o futuro que estamos moldando juntos.
+                                Construir o 'Draiper' foi uma jornada apaixonante. Nosso objetivo sempre foi simplificar e inovar no setor da moda, conectando fornecedores, revendedores e transportadoras de maneira eficiente. Estou orgulhoso do que alcançamos e animado para o futuro que estamos moldando juntos.
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -484,7 +484,7 @@
                             <h4>Designer</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                A experiência de trabalhar com o 'Draper Fashion on Demand' tem sido incrível. A facilidade de acesso a uma variedade de produtos e a eficiência do serviço de entrega revolucionaram a maneira como faço negócios.
+                                A experiência de trabalhar com o 'Draiper' tem sido incrível. A facilidade de acesso a uma variedade de produtos e a eficiência do serviço de entrega revolucionaram a maneira como faço negócios.
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -497,7 +497,7 @@
                             <h4>Store Owner</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Como proprietária de loja, posso dizer que o 'Draper Fashion on Demand' mudou o jogo para nós. A variedade de opções e a facilidade de encomenda e entrega são incomparáveis.
+                                Como proprietária de loja, posso dizer que o 'Draiper' mudou o jogo para nós. A variedade de opções e a facilidade de encomenda e entrega são incomparáveis.
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -510,7 +510,7 @@
                             <h4>Freelancer</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Trabalhar como freelancer com o 'Draper Fashion on Demand' ofereceu-me oportunidades únicas. A plataforma é intuitiva e me conecta a uma rede ampla de contatos no setor da moda.
+                                Trabalhar como freelancer com o 'Draiper' ofereceu-me oportunidades únicas. A plataforma é intuitiva e me conecta a uma rede ampla de contatos no setor da moda.
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -523,7 +523,7 @@
                             <h4>Entrepreneur</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Como empreendedor no setor da moda, aprecio verdadeiramente o impacto que o 'Draper Fashion on Demand' teve no mercado. A plataforma nos permite alcançar novos mercados com eficiência e inovação.
+                                Como empreendedor no setor da moda, aprecio verdadeiramente o impacto que o 'Draiper' teve no mercado. A plataforma nos permite alcançar novos mercados com eficiência e inovação.
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -782,8 +782,8 @@
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>Contact Us</p>
+                <h2>Contato</h2>
+                <p>Entre em Contato Conosco</p>
             </div>
 
             <div class="row">
@@ -792,21 +792,22 @@
                     <div class="info">
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
-                            <h4>Location:</h4>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            <h4>Localização:</h4>
+                            <p>Rua da Moda, 123, São Paulo, SP, Brasil</p> <!-- Atualize com seu endereço real -->
                         </div>
 
                         <div class="email">
                             <i class="bi bi-envelope"></i>
                             <h4>Email:</h4>
-                            <p>info@example.com</p>
+                            <p>contato@draperfashion.com</p> <!-- Atualize com seu email real -->
                         </div>
 
                         <div class="phone">
                             <i class="bi bi-phone"></i>
-                            <h4>Call:</h4>
-                            <p>+1 5589 55488 55s</p>
+                            <h4>Telefone:</h4>
+                            <p>+55 11 1234 5678</p> <!-- Atualize com seu telefone real -->
                         </div>
+
 
                     </div>
 
@@ -854,8 +855,8 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-info">
-                        <h3>Bootslander</h3>
-                        <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+                        <h3>Draiper</h3>
+                        <p class="pb-3"><em>Conectando o mundo da moda de forma inovadora e eficiente.</em></p>
                         <p>
                             A108 Adam Street <br>
                             NY 535022, USA<br><br>
@@ -909,14 +910,14 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Draiper</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="#">Draiper</a>
         </div>
     </div>
 </footer><!-- End Footer -->

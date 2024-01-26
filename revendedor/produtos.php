@@ -63,6 +63,16 @@ $iconesCategorias = [
 <head>
     <meta charset="UTF-8">
     <title>Lista de Produtos</title>
+
+    <style>
+        fa-solid, .fas {
+            font-weight: 900;
+            border: 2px solid #eee;
+            padding: 10px;
+            border-radius: 10px;
+            color: #8b8b8b;
+        }
+    </style>
 </head>
 <body>
 <!-- Seção de Categorias -->

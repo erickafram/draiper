@@ -26,8 +26,6 @@ function calcularTotalCarrinho($carrinho)
 <head>
     <meta charset="UTF-8">
     <title>Carrinho de Compras</title>
-    <!-- Adicione o link para o Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 <!-- Seção de Carrinho -->
