@@ -14,12 +14,18 @@
     <link rel="stylesheet" href="/draiper/assets/css/style_sistema.css">
 </head>
 <body>
-<!-- Barra de navegação (navbar) pode ser incluída aqui ou em navbar.php -->
-<!-- Exemplo de navbar simples -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <!-- Adicione a classe "fixed-top" aqui -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
         <a href="#">
             <img src="../assets/images/logo.png" alt="" width="80px" style="margin:10px 15px;">
+        </a>
+
+        <!-- Ícone de Carrinho para Dispositivos Móveis (Visível apenas em telas pequenas) -->
+        <a class="nav-link d-lg-none" href="cart.php" style="position: absolute; right: 60px; top: 10px;">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="carrinho-quantidade-mobile" class="badge badge-secondary">
+                <?php echo array_sum(array_column($_SESSION['carrinho'], 'quantidade')); ?>
+            </span>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +41,7 @@
                         Início
                     </a>
                 </li>
+
                 <?php
                 // Verifique o nível de acesso do usuário
                 $nivelAcesso = $_SESSION['nivel_acesso'];
@@ -83,10 +90,19 @@
         <!-- Menu à direita do navbar -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+                <!-- Ícone de Carrinho para Desktop (Visível apenas em telas grandes) -->
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link" href="cart.php">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span id="carrinho-quantidade" class="badge badge-secondary">
+                            <?php echo array_sum(array_column($_SESSION['carrinho'], 'quantidade')); ?>
+                        </span>
+                    </a>
+                </li>
                 <!-- Dropdown do Usuário Logado -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?php echo $_SESSION['nome_completo']; ?> <!-- Modificado para mostrar o nome completo do usuário -->
+                        <?php echo $_SESSION['nome_completo']; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Perfil</a></li>

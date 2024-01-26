@@ -27,6 +27,12 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+<style>
+    .btn-success{
+        --bs-btn-hover-bg: #1acc8d;
+    }
+    </style>
 <body>
 
 <!-- ======= Header ======= -->

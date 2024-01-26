@@ -59,6 +59,9 @@ if (isset($_GET['produto_id'])) {
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div class style=" bottom: 0; left: 0; right: 0; font-size: 0.75rem;">
+                        <i class="far fa-clock"></i> Entrega Rápida
+                    </div>
                     <h2><?php echo $produto['nome']; ?></h2>
                     <p>Preço: R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
                     <p>Estoque: <?php echo $produto['estoque']; ?> unidades</p>
@@ -114,41 +117,54 @@ if (isset($_GET['produto_id'])) {
 
 
             <script>
-            $(document).ready(function () {
-                // Quando o botão "Adicionar ao Carrinho" for clicado
-                $('#addToCart').on('click', function () {
-                    var quantidade = $('#quantidade').val();
-                    var produtoId = <?php echo $produto['id']; ?>;
-                    var tamanho = $('#tamanho').val();
-                    var cor = $('#cor').val();
-                    var quantidadeMinima = <?php echo $produto['quantidade_minima_pedido']; ?>;
+                $(document).ready(function () {
+                    $('#addToCart').on('click', function () {
+                        var quantidade = $('#quantidade').val();
+                        var produtoId = <?php echo $produto['id']; ?>;
+                        var tamanho = $('#tamanho').val();
+                        var cor = $('#cor').val();
 
-                    // Verifica se a quantidade selecionada é maior ou igual à quantidade mínima
-                    if (quantidade < quantidadeMinima) {
-                        alert('A quantidade mínima de compra é ' + quantidadeMinima + '.');
-                        return; // Impede o envio da solicitação AJAX
-                    }
-
-                    // Enviar uma solicitação AJAX para adicionar o produto ao carrinho
-                    $.ajax({
-                        url: 'adicionar_ao_carrinho.php',
-                        type: 'POST',
-                        data: {
-                            produto_id: produtoId,
-                            quantidade: quantidade,
-                            tamanho: tamanho,
-                            cor: cor
-                        },
-                        success: function (response) {
-                            // Exiba uma mensagem de sucesso ou atualize o carrinho na interface do usuário
-                            alert('Produto adicionado ao carrinho com sucesso!');
-                        },
-                        error: function () {
-                            // Lidar com erros, se houver algum
-                            alert('Erro ao adicionar o produto ao carrinho.');
+                        // Verifica se a quantidade selecionada é maior ou igual à quantidade mínima
+                        if (quantidade < <?php echo $produto['quantidade_minima_pedido']; ?>) {
+                            alert('A quantidade mínima de compra é ' + <?php echo $produto['quantidade_minima_pedido']; ?> + '.');
+                            return;
                         }
+
+                        // Enviar uma solicitação AJAX para adicionar o produto ao carrinho
+                        $.ajax({
+                            url: 'adicionar_ao_carrinho.php',
+                            type: 'POST',
+                            data: {
+                                produto_id: produtoId,
+                                quantidade: quantidade,
+                                tamanho: tamanho,
+                                cor: cor
+                            },
+                            success: function (response) {
+                                alert('Produto adicionado ao carrinho com sucesso!');
+                                // Chama a função para atualizar a quantidade no carrinho
+                                atualizarQuantidadeCarrinho();
+                            },
+                            error: function () {
+                                alert('Erro ao adicionar o produto ao carrinho.');
+                            }
+                        });
                     });
-                });
+
+                    function atualizarQuantidadeCarrinho() {
+                        // Atualiza a quantidade no carrinho no header
+                        $.ajax({
+                            url: 'obter_quantidade_carrinho.php',
+                            type: 'GET',
+                            success: function (response) {
+                                var data = JSON.parse(response);
+                                $('#carrinho-quantidade').text(data.quantidade);
+                            },
+                            error: function () {
+                                console.log('Erro ao obter a quantidade do carrinho.');
+                            }
+                        });
+                    }
 
                 // Quando o botão "Finalizar Compra" for clicado
                 $('#finalizePurchase').on('click', function () {

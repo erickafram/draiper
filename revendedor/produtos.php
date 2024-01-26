@@ -103,7 +103,9 @@ $iconesCategorias = [
             echo '<a href="detalhes_produto.php?produto_id=' . $row['id'] . '">'; // Altere o link para redirecionar para detalhes_produto.php
             echo '<div style="position: relative; overflow: hidden;">';
             echo '<img class="card-img-top" src="' . $caminhoImagens . $row['imagem_destaque'] . '" alt="' . $row['nome'] . '">';
-            echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: #d0011b; color: white; font-size: 0.75rem;">Entrega Imediata</div>';
+            echo '<div class="text-center" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: #d0011b; color: white; font-size: 0.75rem;">';
+            echo '<i class="far fa-clock"></i> Entrega Rápida';
+            echo '</div>';
             echo '</div>';
             echo '<div class="card-body">';
             echo '<h5 class="card-title" style="line-height: 14px; font-size: .75rem !important;">' . $row['nome'] . '</h5>';

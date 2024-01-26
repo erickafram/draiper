@@ -3,6 +3,13 @@
 include('../includes/bibliotecas.php');
 ?>
 
+<style>
+    .card:hover {
+        border-color: #1acc8d !important;
+    }
+
+</style>
+
 
 <div class="container mt-5" style="max-width: 800px;">
     <h1 class="text-center" style="font-size: 25px;">É um prazer te ver por aqui!</h1>
